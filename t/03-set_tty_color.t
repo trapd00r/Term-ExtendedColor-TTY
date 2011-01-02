@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-use Test::More tests => 1;
+use Test::More tests => 2;
 
 use Term::ExtendedColor::TTY;
 use Data::Dumper;
@@ -11,5 +11,12 @@ $Data::Dumper::Quotekeys = 0;
 $Data::Dumper::Sortkeys  = 1;
 
 
-chomp(my $esc = Dumper( set_tty_color(1, 'ff0000') ));
-is($esc, '"\e]P8ff0000"', 'Set color index 1');
+my $map = {
+  0 => 'ffff00',
+};
+
+my $result = set_tty_color($map);
+
+is(ref($result), 'HASH', 'Hashref returned');
+chomp(my $esc = Dumper($result->{0}));
+is($esc, '"\e]P0ffff00"', 'Color value returned');

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 package Term::ExtendedColor::TTY;
 
-our $VERSION  = '0.001';
+our $VERSION  = '0.002';
 
 require Exporter;
 @ISA = 'Exporter';
@@ -28,26 +28,32 @@ my %color_indexes = (
   14  => 'PF',
 );
 
+
 sub set_tty_color {
-  my($index, $color) = @_;
+  my $map = shift;
 
-  if( ($index < 0) or ($index > 15) ) {
-    croak("Index must be between 0 and 15, inclusive\n");
-  }
-  if($color !~ /^[A-Za-z0-9]{6}$/) {
-    croak("'$color' is not a valid hexadecimal color representation\n");
+  ref($map) eq 'HASH' or croak("set_tty_color() expects an hashref");
+
+  my %results;
+
+  for my $index(sort{ $a <=> $b } keys(%{$map})) {
+    if( ($index < 0) or ($index > 14) ) {
+      croak("'$index': color index must be between 0 and 14, inclusive\n");
+    }
+    if($map->{$index} !~ m/^(?:[A-Za-z0-9]{6}$)/) {
+      croak(
+        "'$map->{$index}' is not a valid hexadecimal color representation\n"
+      );
+    }
+
+    $results{$index} = sprintf("\e]%s",
+      $color_indexes{$index}
+        . $map->{$index}, #P0ffffff
+      );
   }
 
-  if( ($index eq 'bg') or ($index eq 'background') ) {
-    $index = 0;
-  }
-  elsif( ($index eq 'fg') or ($index eq 'foreground') ) {
-    $index = 1;
-  }
-
-  return( sprintf("\e]%s", $color_indexes{$index} . $color) );
+  return \%results;
 }
-
 
 =pod
 
@@ -59,8 +65,30 @@ Term::ExtendedColor::TTY - Set colors in the TTY
 
     use Term::ExtendedColor::TTY;
 
-    my $esc_str = set_tty_color(4, 'ff0000');
-    print $esc_str;
+    my %colorscheme = (
+      0   => '030303',
+      1   => '1c1c1c',
+      2   => 'ff4747',
+      3   => 'ff6767',
+      4   => '2b4626',
+      5   => 'b03b31',
+      6   => 'ff8f00',
+      7   => 'bdf1ed',
+      8   => '1165e9',
+      9   => '5496ff',
+      10  => 'aef7af',
+      11  => 'b50077',
+      12  => 'cb1c13',
+      13  => '6be603',
+      14  => 'ffffff',
+    );
+
+    my $result = set_tty_color( \%colorscheme );
+
+    for my $index(sort(keys(%{$result}))) {
+      print "Setting color index $index... $result->{$index}\n";
+    }
+
 
 =head1 DESCRIPTION
 
@@ -71,13 +99,14 @@ TTY (or Virtual Console, if you wish) for various resources, such as colors.
 
 =head2 set_tty_color()
 
-Parameters: $index, $color
+Parameters: \%colormap
 
-Returns:    $string
+Returns:    \%results
 
-  # Change color index 5
-  my $color = set_xterm_color(5, 'ff0000');
-  print $color;
+  my $ref = set_tty_color( \%colorscheme );
+
+Returns a hash reference where its keys are the color indexes ( 0 .. 14) and the
+values are escape sequences crafted together to be printed straight to the TTY.
 
 =head1 SEE ALSO
 
