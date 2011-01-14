@@ -1,7 +1,7 @@
 #!/usr/bin/perl
-package Term::ExtendedColor::Colorschemes;
+package Term::ExtendedColor::TTY::Colorschemes;
 
-our $VERSION  = '0.001';
+our $VERSION  = '0.003';
 
 require Exporter;
 @ISA = 'Exporter';
@@ -62,6 +62,97 @@ my $colorschemes = {
     13  => '0ed200',
     14  => '0fe100',
   },
+
+  purple    => {
+    0   => '121212',
+    1   => '300a97',
+    2   => '430ac0',
+    3   => '830abf',
+    4   => '7b0ad2',
+    5   => '370ad3',
+    6   => '650a78',
+    7   => 'ffffff',
+    8   => '960ac9',
+    9   => '5a0a8b',
+    10  => '5d0ac8',
+    11  => '8a0afa',
+    12  => '7b0a73',
+    13  => '8b0a25',
+    14  => '500a98',
+  },
+
+  blue      => {
+    0   => '121212',
+    1   => '141fe1',
+    2   => '1e2fd2',
+    3   => '283fc3',
+    4   => '324fb4',
+    5   => '3c5fa5',
+    6   => '466f96',
+    7   => 'ffffff',
+    8   => '5a8f78',
+    9   => '649f69',
+    10  => '6eaf5a',
+    11  => '78bf4b',
+    12  => '82cf3c',
+    13  => '8cdf2d',
+    14  => '96ef1e',
+  },
+
+  grey      => {
+    0   => '121212',
+    1   => '888888',
+    2   => '444444',
+    3   => '242424',
+    4   => '2d2d2d',
+    5   => '363636',
+    6   => '3f3f3f',
+    7   => 'ffffff',
+    8   => '515151',
+    9   => '5a5a5a',
+    10  => '636363',
+    11  => '6c6c6c',
+    12  => '757575',
+    13  => '7e7e7e',
+    14  => '878787',
+  },
+
+  rasta     => {
+    0   => '121212',
+    1   => '3c8d0a',
+    2   => '8f0d0a',
+    3   => '33810a',
+    4   => '349e0a',
+    5   => '12a10a',
+    6   => '729a0a',
+    7   => 'ffffff',
+    8   => '104770',
+    9   => 'b3410a',
+    10  => 'f0120a',
+    11  => 'b63e0a',
+    12  => '774c0a',
+    13  => '5d450a',
+    14  => '56540a',
+  },
+
+  breeze    => {
+    0   => '121212',
+    1   => '1043c1',
+    2   => '1865a2',
+    3   => '208783',
+    4   => '28a964',
+    5   => '30cb45',
+    6   => '38ed26',
+    7   => 'ffffff',
+    8   => '49210e',
+    9   => '51412c',
+    10  => '59614a',
+    11  => '618168',
+    12  => '69a186',
+    13  => '71c1a4',
+    14  => '79e1c2',
+  },
+
 };
 
 sub get_colorschemes { return keys %{ $colorschemes }; }
@@ -87,9 +178,11 @@ Term::ExtendedColor::TTY::Colorschemes - Colorschemes for the TTY
     use Term::ExtendedColor::TTY;
     use Term::ExtendedColor::TTY::Colorschemes;
 
-
 =head1 DESCRIPTION
 
+B<Term::ExtendedColor::TTY::Colorschemes> exports functions for retrieving and
+using colorschemes in the TTY. This is intended to be used with
+L<Term::ExtendedColor::TTY>.
 
 =head1 EXPORTS
 
@@ -101,9 +194,22 @@ Returns:    \%colorscheme
 
   my $colorscheme  = get_colorscheme('xterm');
 
+Returns a hash reference where its keys will be the color index and the value
+the hexadecimal color value.
+
+=head2 get_colorschemes()
+
+Paramters: $string
+
+Returns:   @colorschemes
+
+In list context, return a list of all available colorschemes (strings).
+In scalar context, return the number of available colorschemes.
+
 =head1 SEE ALSO
 
-L<Term::ExtendedColor>, L<Term::ExtendedColor::Xresources>
+L<Term::ExtendedColor::TTY>, L<Term::ExtendedColor::Xresources>,
+L<Term::ExtendedColor>
 
 =head1 AUTHOR
 
