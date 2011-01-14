@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 package Term::ExtendedColor::TTY;
 
-our $VERSION  = '0.002';
+our $VERSION  = '0.003';
 
 require Exporter;
 @ISA = 'Exporter';
@@ -110,7 +110,7 @@ values are escape sequences crafted together to be printed straight to the TTY.
 
 =head1 SEE ALSO
 
-L<Term::ExtendedColor>, L<Term::ExtendedColor::Xresources>
+L<Term::ExtendedColor::TTY::Colorschemes>, L<Term::ExtendedColor>, L<Term::ExtendedColor::Xresources>
 
 =head1 AUTHOR
 
@@ -119,11 +119,9 @@ L<Term::ExtendedColor>, L<Term::ExtendedColor::Xresources>
   magnus@trapd00r.se
   http://japh.se
 
-Written by Magnus Woldrich
-
 =head1 COPYRIGHT
 
-Copyright 2010 Magnus Woldrich <magnus@trapd00r.se>. This program is free
+Copyright 2010, 2011 Magnus Woldrich <magnus@trapd00r.se>. This program is free
 software; you may redistribute it and/or modify it under the same terms as
 Perl itself.
 

@@ -222,7 +222,7 @@ Written by Magnus Woldrich
 
 =head1 COPYRIGHT
 
-Copyright 2010 Magnus Woldrich <magnus@trapd00r.se>. This program is free
+Copyright 2010, 2011 Magnus Woldrich <magnus@trapd00r.se>. This program is free
 software; you may redistribute it and/or modify it under the same terms as
 Perl itself.
 
