@@ -27,6 +27,7 @@ my $colorschemes = {
     12  => '0000ff',
     13  => 'ff00ff',
     14  => '00ffff',
+    15  => 'aabac8',
   },
   woldrich  => {
     0   => '030303',
@@ -44,6 +45,7 @@ my $colorschemes = {
     12  => 'cb1c13',
     13  => '6be603',
     14  => 'ffffff',
+    15  => 'aabac8',
   },
   matrix    => {
     0   => '121212',
@@ -61,6 +63,7 @@ my $colorschemes = {
     12  => '0dc300',
     13  => '0ed200',
     14  => '0fe100',
+    15  => 'aabac8',
   },
 
   purple    => {
@@ -79,6 +82,7 @@ my $colorschemes = {
     12  => '7b0a73',
     13  => '8b0a25',
     14  => '500a98',
+    15  => 'aabac8',
   },
 
   blue      => {
@@ -97,6 +101,7 @@ my $colorschemes = {
     12  => '82cf3c',
     13  => '8cdf2d',
     14  => '96ef1e',
+    15  => 'aabac8',
   },
 
   grey      => {
@@ -115,6 +120,8 @@ my $colorschemes = {
     12  => '757575',
     13  => '7e7e7e',
     14  => '878787',
+    15  => 'aabac8',
+
   },
 
   rasta     => {
@@ -133,6 +140,7 @@ my $colorschemes = {
     12  => '774c0a',
     13  => '5d450a',
     14  => '56540a',
+    15  => 'aabac8',
   },
 
   breeze    => {
@@ -151,6 +159,7 @@ my $colorschemes = {
     12  => '69a186',
     13  => '71c1a4',
     14  => '79e1c2',
+    15  => 'aabac8',
   },
 
 };

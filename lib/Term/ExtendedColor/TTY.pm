@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 package Term::ExtendedColor::TTY;
 
-our $VERSION  = '0.003';
+our $VERSION  = '0.004';
 
 require Exporter;
 @ISA = 'Exporter';
@@ -10,22 +10,24 @@ our @EXPORT = qw(set_tty_color);
 use strict;
 use Carp 'croak';
 
+
 my %color_indexes = (
-  0   => 'P0',
-  1   => 'P8',
-  2   => 'P9',
-  3   => 'P2',
-  4   => 'PA',
-  5   => 'P3',
-  6   => 'PB',
-  7   => 'P4',
-  8   => 'PC',
-  9   => 'P5',
-  10  => 'PD',
-  11  => 'P6',
-  12  => 'PE',
-  13  => 'P7',
-  14  => 'PF',
+  0   => 'P0', #black
+  1   => 'P8', # dark grey
+  2   => 'P1', # dark red
+  3   => 'P9', # red
+  4   => 'P2', # dark green
+  5   => 'PA', # green
+  6   => 'P3', # brown
+  7   => 'PB', # yellow
+  8   => 'P4', # darkblue
+  9   => 'PC', # blue
+  10  => 'P5', # dark magenta
+  11  => 'PD', # magenta
+  12  => 'P6', # dark cyan
+  13  => 'PE', # cyan
+  14  => 'P7', # dark white
+  15  => 'PF', # white
 );
 
 
@@ -54,6 +56,7 @@ sub set_tty_color {
 
   return \%results;
 }
+
 
 =pod
 
