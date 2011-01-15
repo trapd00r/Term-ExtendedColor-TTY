@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 package Term::ExtendedColor::TTY;
 
-our $VERSION  = '0.005';
+our $VERSION  = '0.006';
 
 require Exporter;
 @ISA = 'Exporter';
@@ -39,8 +39,8 @@ sub set_tty_color {
   my %results;
 
   for my $index(sort{ $a <=> $b } keys(%{$map})) {
-    if( ($index < 0) or ($index > 14) ) {
-      croak("'$index': color index must be between 0 and 14, inclusive\n");
+    if( ($index < 0) or ($index > 15) ) {
+      croak("'$index': color index must be between 0 and 15, inclusive\n");
     }
     if($map->{$index} !~ m/^(?:[A-Za-z0-9]{6}$)/) {
       croak(
