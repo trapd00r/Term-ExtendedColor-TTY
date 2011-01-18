@@ -1,11 +1,11 @@
 #!/usr/bin/perl
 package Term::ExtendedColor::TTY;
 
-our $VERSION  = '0.006';
+our $VERSION  = '0.010';
 
 require Exporter;
 @ISA = 'Exporter';
-our @EXPORT = qw(set_tty_color);
+our @EXPORT_OK = qw(set_tty_color);
 
 use strict;
 use Carp 'croak';
@@ -99,6 +99,10 @@ Term::ExtendedColor::TTY provides functions for changing and querying the
 TTY (or Virtual Console, if you wish) for various resources, such as colors.
 
 =head1 EXPORTS
+
+None by default.
+
+=head1 FUNCTIONS
 
 =head2 set_tty_color()
 
