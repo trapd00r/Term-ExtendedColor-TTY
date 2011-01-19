@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 use Test::More tests => 2;
 
-use Term::ExtendedColor::TTY;
+use Term::ExtendedColor::TTY qw(set_tty_color);
 use Data::Dumper;
 $Data::Dumper::Terse     = 1;
 $Data::Dumper::Indent    = 1;
