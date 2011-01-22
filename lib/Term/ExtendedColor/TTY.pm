@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 package Term::ExtendedColor::TTY;
 
-our $VERSION  = '0.011';
+our $VERSION  = '0.015';
 
 require Exporter;
 @ISA = 'Exporter';
