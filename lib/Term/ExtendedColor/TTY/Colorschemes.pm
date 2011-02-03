@@ -11,6 +11,7 @@ BEGIN {
     get_colorscheme
     get_colorschemes
   );
+}
 
 use Carp qw(croak);
 
