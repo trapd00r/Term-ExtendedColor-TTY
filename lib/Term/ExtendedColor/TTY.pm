@@ -1,14 +1,18 @@
-#!/usr/bin/perl
 package Term::ExtendedColor::TTY;
-
-our $VERSION  = '0.015';
-
-require Exporter;
-@ISA = 'Exporter';
-our @EXPORT_OK = qw(set_tty_color);
-
 use strict;
-use Carp 'croak';
+
+BEGIN {
+  use Exporter;
+  use vars qw($VERSION @ISA @EXPORT_OK);
+
+  $VERSION = '0.022';
+  @ISA     = qw(Exporter);
+
+  @EXPORT_OK = qw(
+    set_tty_color
+  );
+}
+use Carp qw(croak);
 
 
 my %color_indexes = (
@@ -58,6 +62,12 @@ sub set_tty_color {
 }
 
 
+1;
+
+
+__END__
+
+
 =pod
 
 =head1 NAME
@@ -95,8 +105,9 @@ Term::ExtendedColor::TTY - Set colors in the TTY
 
 =head1 DESCRIPTION
 
-Term::ExtendedColor::TTY provides functions for changing and querying the
-TTY (or Virtual Console, if you wish) for various resources, such as colors.
+L<Term::ExtendedColor::TTY> provides functions for changing and querying the
+Linux TTY (or Virtual Console, if you wish) for various resources, such as
+colors.
 
 =head1 EXPORTS
 
@@ -126,12 +137,18 @@ L<Term::ExtendedColor::TTY::Colorschemes>, L<Term::ExtendedColor>, L<Term::Exten
   magnus@trapd00r.se
   http://japh.se
 
+=head1 CONTRIBUTORS
+
+None required yet.
+
 =head1 COPYRIGHT
 
-Copyright 2010, 2011 Magnus Woldrich <magnus@trapd00r.se>. This program is free
-software; you may redistribute it and/or modify it under the same terms as
-Perl itself.
+Copyright 2010, 2011 the B<Term::ExtendedColor::TTY>s L</AUTHOR> and
+L</CONTRIBUTORS> as listed above.
+
+=head1 LICENSE
+
+This library is free software; you may redistribute it and/or modify it under
+the same terms as Perl itself.
 
 =cut
-
-1;

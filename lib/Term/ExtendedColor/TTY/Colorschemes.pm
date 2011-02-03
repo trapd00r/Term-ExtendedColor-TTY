@@ -1,14 +1,18 @@
-#!/usr/bin/perl
 package Term::ExtendedColor::TTY::Colorschemes;
-
-our $VERSION  = '0.005';
-
-require Exporter;
-@ISA = 'Exporter';
-our @EXPORT = qw(get_colorscheme get_colorschemes);
-
 use strict;
-use Carp 'croak';
+
+BEGIN {
+  use Exporter;
+  use vars qw($VERSION @ISA @EXPORT);
+
+  $VERSION = '0.010';
+  @ISA     = qw(Exporter);
+  @EXPORT  = qw(
+    get_colorscheme
+    get_colorschemes
+  );
+
+use Carp qw(croak);
 
 my $colorschemes = {
   xterm     => {
@@ -711,7 +715,7 @@ Term::ExtendedColor::TTY::Colorschemes - Colorschemes for the TTY
 
 =head1 SYNOPSIS
 
-    use Term::ExtendedColor::TTY;
+    use Term::ExtendedColor::TTY qw(set_tty_color);
     use Term::ExtendedColor::TTY::Colorschemes;
 
 =head1 DESCRIPTION
@@ -754,14 +758,18 @@ L<Term::ExtendedColor>
   magnus@trapd00r.se
   http://japh.se
 
-Written by Magnus Woldrich
+=head1 CONTRIBUTORS
+
+None required yet.
 
 =head1 COPYRIGHT
 
-Copyright 2010, 2011 Magnus Woldrich <magnus@trapd00r.se>. This program is free
-software; you may redistribute it and/or modify it under the same terms as
-Perl itself.
+Copyright 2010, 2011 the B<Term::ExtendedColor::TTY::Colorschemes> L</AUTHOR>
+and L</CONTRIBUTORS> as listed above.
+
+=head1 LICENSE
+
+This library is free software; you may redistribute it and/or modify it under
+the same terms as Perl itself.
 
 =cut
-
-1;
