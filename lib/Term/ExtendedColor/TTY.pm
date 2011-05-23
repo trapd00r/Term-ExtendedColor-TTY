@@ -5,7 +5,7 @@ BEGIN {
   use Exporter;
   use vars qw($VERSION @ISA @EXPORT_OK);
 
-  $VERSION = '0.023';
+  $VERSION = '0.024';
   @ISA     = qw(Exporter);
 
   @EXPORT_OK = qw(
@@ -128,7 +128,7 @@ values are escape sequences crafted together to be printed straight to the TTY.
 
 =head1 SEE ALSO
 
-L<Term::ExtendedColor::TTY::Colorschemes>, L<Term::ExtendedColor>, L<Term::ExtendedColor::Xresources>
+L<Term::ExtendedColor>, L<Term::ExtendedColor::Xresources>
 
 =head1 AUTHOR
 
