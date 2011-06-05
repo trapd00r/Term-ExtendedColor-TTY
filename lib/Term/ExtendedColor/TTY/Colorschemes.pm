@@ -5,7 +5,7 @@ BEGIN {
   use Exporter;
   use vars qw($VERSION @ISA @EXPORT);
 
-  $VERSION = '0.010';
+  $VERSION = '0.012';
   @ISA     = qw(Exporter);
   @EXPORT  = qw(
     get_colorscheme
@@ -70,7 +70,6 @@ my $colorschemes = {
     14  => '0fe100',
     15  => 'aabac8',
   },
-
   purple    => {
     0   => '121212',
     1   => '300a97',
@@ -89,7 +88,6 @@ my $colorschemes = {
     14  => '500a98',
     15  => 'aabac8',
   },
-
   blue      => {
     0   => '121212',
     1   => '141fe1',
@@ -108,7 +106,6 @@ my $colorschemes = {
     14  => '96ef1e',
     15  => 'aabac8',
   },
-
   grey      => {
     0   => '121212',
     1   => '888888',
@@ -126,9 +123,7 @@ my $colorschemes = {
     13  => '7e7e7e',
     14  => '878787',
     15  => 'aabac8',
-
   },
-
   rasta     => {
     0   => '121212',
     1   => '3c8d0a',
@@ -147,7 +142,6 @@ my $colorschemes = {
     14  => '56540a',
     15  => 'aabac8',
   },
-
   breeze    => {
     0   => '121212',
     1   => '1043c1',
@@ -166,7 +160,6 @@ my $colorschemes = {
     14  => '79e1c2',
     15  => 'aabac8',
   },
-
   freakcode => {
     0  => '000000',
     1  => 'ff6565',
@@ -185,7 +178,6 @@ my $colorschemes = {
     14 => '46a4ff',
     15 => 'ffffff',
   },
-
   leosolaris => {
     0  => '000000',
     1  => 'A80000',
@@ -204,7 +196,6 @@ my $colorschemes = {
     14 => '50FCF8',
     15 => 'F8FCF8',
   },
-
   smurnjiff => {
     0  => '2e3436',
     8  => '555753',
@@ -223,8 +214,7 @@ my $colorschemes = {
     7  => 'd3d7cf',
     15 => 'eeeeec',
   },
-
-  CalcAndCoffee => {
+  calcandcoffee => {
     0 => 262729,
     1 => "F92671",
     10 => "A6E22E",
@@ -242,7 +232,7 @@ my $colorschemes = {
     8 => 554444,
     9 => "F92671"
   },
-  Daisuke2 => {
+  daisuke2 => {
     0 => "000000",
     1 => "ff6565",
     10 => "c8e7a8",
@@ -260,7 +250,7 @@ my $colorschemes = {
     8 => 555753,
     9 => "ff8d8d"
   },
-  Digerati => {
+  digerati => {
     0 => 303030,
     1 => "c03000",
     10 => "A6CD07",
@@ -278,7 +268,7 @@ my $colorschemes = {
     8 => "5F5F5F",
     9 => "FF3A78"
   },
-  Longbow => {
+  longbow => {
     0 => 222222,
     1 => "9E5641",
     10 => "C4DF90",
@@ -296,7 +286,7 @@ my $colorschemes = {
     8 => 454545,
     9 => "CC896D"
   },
-  Rasi => {
+  rasi => {
     0 => 101010,
     1 => "f13a21",
     10 => "ffc005",
@@ -314,7 +304,7 @@ my $colorschemes = {
     8 => "1d202f",
     9 => "ffffff"
   },
-  Reasons => {
+  reasons => {
     0 => "1B1D1E",
     1 => "F92672",
     10 => "BEED5F",
@@ -332,7 +322,7 @@ my $colorschemes = {
     8 => 505354,
     9 => "FF669D"
   },
-  Square => {
+  square => {
     0 => 171717,
     1 => "ea6868",
     10 => "9ead72",
@@ -350,7 +340,7 @@ my $colorschemes = {
     8 => 554444,
     9 => "ff7272"
   },
-  SuperTrain => {
+  supertrain => {
     0 => "1C1C1C",
     1 => "D81860",
     10 => "BDE077",
@@ -368,7 +358,7 @@ my $colorschemes = {
     8 => "4d4d4d",
     9 => "F00060"
   },
-  Tango => {
+  tango => {
     0 => "2e3436",
     1 => "cc0000",
     10 => "8ae234",
@@ -386,7 +376,7 @@ my $colorschemes = {
     8 => 555753,
     9 => "ef2929"
   },
-  Tangoesque => {
+  tangoesque => {
     0 => "000000",
     1 => "ff6565",
     10 => "c8e7a8",
@@ -404,7 +394,7 @@ my $colorschemes = {
     8 => 555753,
     9 => "ff8d8d"
   },
-  Taters => {
+  taters => {
     0 => "1C1C1C",
     1 => "D81860",
     10 => "BDE077",
@@ -422,7 +412,7 @@ my $colorschemes = {
     8 => "4d4d4d",
     9 => "F00060"
   },
-  Thayer => {
+  thayer => {
     0 => "1b1d1e",
     1 => "f92672",
     10 => "b6e354",
@@ -494,7 +484,7 @@ my $colorschemes = {
     8 => 554444,
     9 => "FF7272"
   },
-  "freakcode" => {
+  freakcode => {
     0 => "000000",
     1 => "ff6565",
     10 => "c8e7a8",
@@ -548,7 +538,7 @@ my $colorschemes = {
     8 => 545054,
     9 => "F85450"
   },
-  "leosolaris" => {
+  leosolaris => {
     0 => "000000",
     1 => "A80000",
     10 => "50FC50",
@@ -638,7 +628,7 @@ my $colorschemes = {
     8 => "3d3d3d",
     9 => "c56a47"
   },
-  "smurnjiff" => {
+  smurnjiff => {
     0 => "2e3436  ",
     1 => "cc0000 ",
     10 => "66ff66 ",
